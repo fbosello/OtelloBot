@@ -9,7 +9,11 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 public class OtelloBot extends TelegramLongPollingBot {
 
-    @Override
+    public OtelloBot() {
+		super();
+	}
+
+	@Override
     public String getBotToken() {
         return "402637317:AAHd95qUdECVmIXHcWfiVUJgLoVzLZJyB_s";
     }
@@ -32,17 +36,4 @@ public class OtelloBot extends TelegramLongPollingBot {
         }
  
     }
- 
-    public static void main(String[] args) {
-        ApiContextInitializer.init();
- 
-        TelegramBotsApi botsApi = new TelegramBotsApi();
- 
-        try {
-            botsApi.registerBot(new OtelloBot());
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
-	
 }
