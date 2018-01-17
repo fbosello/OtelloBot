@@ -19,11 +19,11 @@ public class OtelloBot extends TelegramLongPollingBot {
 
 	@Override
     public String getBotToken() {
-        return "402637317:AAHd95qUdECVmIXHcWfiVUJgLoVzLZJyB_s";
+        return Constants.BOT_TOKEN;
     }
  
     public String getBotUsername() {
-        return "@fbosello_bot.";
+        return Constants.BOT_USERNAME;
     }
  
     public void onUpdateReceived(Update update) {
@@ -52,17 +52,17 @@ public class OtelloBot extends TelegramLongPollingBot {
                             .findFirst()
                             .orElse(null).getFileId();
             // Know photo width
-            int f_width = photos.stream()
+            int fWidth = photos.stream()
                             .sorted(Comparator.comparing(PhotoSize::getFileSize).reversed())
                             .findFirst()
                             .orElse(null).getWidth();
             // Know photo height
-            int f_height = photos.stream()
+            int fHeight = photos.stream()
                             .sorted(Comparator.comparing(PhotoSize::getFileSize).reversed())
                             .findFirst()
                             .orElse(null).getHeight();
             // Set photo caption
-            String caption = "file_id: " + fId + "\nwidth: " + Integer.toString(f_width) + "\nheight: " + Integer.toString(f_height);
+            String caption = "file_id: " + fId + "\nwidth: " + Integer.toString(fWidth) + "\nheight: " + Integer.toString(fHeight);
             SendPhoto msg = new SendPhoto()
                             .setChatId(chatId)
                             .setPhoto(fId)
