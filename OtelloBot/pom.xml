@@ -5,14 +5,6 @@
 	<artifactId>OtelloBot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
-<!-- 	<modules> -->
-<!-- 		<module>telegrambots</module> -->
-<!-- 		<module>telegrambots-meta</module> -->
-<!-- 		<module>telegrambots-extensions</module> -->
-<!-- 		<module>telegrambots-abilities</module> -->
-<!-- 	</modules> -->
-
 	<properties>
 		<maven.deploy.skip>true</maven.deploy.skip>
 		<bots.version>3.5</bots.version>
@@ -23,6 +15,11 @@
 			<groupId>org.telegram</groupId>
 			<artifactId>telegrambots</artifactId>
 			<version>${bots.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 	</dependencies>
 </project>
